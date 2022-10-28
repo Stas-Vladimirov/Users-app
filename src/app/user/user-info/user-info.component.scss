@@ -1,0 +1,45 @@
+.users-posts-container{
+    display: flex;
+    flex-wrap: wrap;
+    app-user-post{
+        width: 200px;
+
+        padding: 20px;
+        margin: 20px;
+
+        border: 1px solid brown;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover{
+            cursor: pointer;
+            background-color: bisque;
+        }
+    }
+}
+.users-todos-container{
+    display: flex;
+    flex-wrap: wrap;
+    app-user-todos{
+        width: 200px;
+
+        padding: 20px;
+        margin: 20px;
+
+        border: 1px solid brown;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover{
+            cursor: pointer;
+            background-color: bisque;
+        }
+    }
+}
+.getTodos{
+    margin-left: 10px;
+}

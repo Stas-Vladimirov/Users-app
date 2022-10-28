@@ -1,0 +1,69 @@
+<div>
+    <h2>{{post.title}}</h2>
+    <p>{{post.body}}</p>
+
+<!--
+    Пункт 19.5
+-->
+<!-- 
+    Пункт 19.6
+    Создадим компонент user-post-comment, который
+    будет отображать комменты пользователей
+-->
+<!-- 
+    Создадим кнопку, при нажатии которой
+    выводится информация о пользователе
+    (click)="getComments()"
+-->
+<!--
+    Выводим компонентов столько сколько пользователей
+
+    Директива *ngFor позволяет создать компонентов
+    столько сколько пользователей
+-->
+<!--
+    Выводим комменты
+    В компонент app-user-post-comment мы должны передать comment (***)
+
+    Мы говорим, что компонента app-user-post-comment
+    примет comment (***) который будет ровняться объекту comment (**)
+
+    Т.е мы берем comment (***) и связываем его с comment (**),
+    котырый будет ждать внутри компонента app-user-post-comment
+
+    comment (****) - поле, которое создали в user-post.component.ts
+-->
+<!--
+    Пункт 19.7
+    В файле user-post-comment.component.ts
+-->
+<!--
+    Пункт 19.11
+    Сделаем так, чтобы при нажатии
+    на кнопки комменты открывались и
+    закрывались
+
+    Компонент покажется
+    когда *ngIf="!isShowComment"
+-->
+<button (click)="getComments()">
+    <span *ngIf="!isShowComment">Show comment</span>
+    <span *ngIf="isShowComment">Hide comment</span>
+</button>
+
+<div *ngIf="isShowComment">
+    <!--                      (**)     (***)                (***)     (****)               -->
+    <app-user-post-comment [comment]="comment" *ngFor="let comment of comment"></app-user-post-comment>
+</div>
+
+</div>
+
+<!--
+    Пункт 19.8
+    Сделаем так, чтобы при нажатии
+    на кнопки комменты открывались и
+    закрывались
+
+    В файле user-post.component
+-->
+

@@ -1,0 +1,33 @@
+<table>
+    <tr>
+        <td>Name:</td>
+        <td>{{user.name}}</td>
+    </tr>
+    <tr>
+        <td>Emale:</td>
+        <td>{{user.email}}</td>
+    </tr>
+</table>
+
+<button (click)="getPost()">
+    <span *ngIf="!isShowPost">Show Post</span>
+    <span *ngIf="isShowPost">Hide Post</span>
+</button>
+
+
+<button (click)="getTodos()" class = "getTodos">
+    <span *ngIf="!isShowTodo">Show Todo</span>
+    <span *ngIf="isShowTodo">Hide Todo</span>
+</button>
+
+<div *ngIf="isShowTodo" class = "users-todos-container">
+    <!--            (**)   (***)             (***)   (****)              -->
+    <app-user-todos [todo]="todo" *ngFor="let todo of todo"></app-user-todos>
+</div>
+
+<div *ngIf="isShowPost" class="users-posts-container">
+    <!--            (**)   (***)             (***)  (****)               -->
+    <app-user-post [post]="post" *ngFor="let post of posts"></app-user-post>
+</div>
+
+
